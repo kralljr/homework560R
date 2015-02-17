@@ -6,7 +6,8 @@
 grade_homework2 <- function(file) {
 	ls1 <- ls()[-which(ls() == "file")]
 	rm(list = ls1)
-	try1 <- try(source(file))
+	age_kid <- 1
+	try1 <- try(source(file, local = T))
 	if (class(try1) == "try-error") {
 		out <- "ERROR: the code does not run without errors"
 	} else {
