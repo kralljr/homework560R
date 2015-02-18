@@ -87,7 +87,7 @@ hw2_2_diab <- function(file) {
 		} else if (p3 != 1 | p4 != 1) {
 			out <- "ERROR: column names or variable names incorrect"
 		} else {
-			out <- "ERROR: table is not correct"
+			out <- "ERROR: final table is not formatted correctly and cannot be graded"
 		}
 
 	
