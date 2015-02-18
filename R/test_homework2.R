@@ -50,9 +50,9 @@ hw2_1_sleep <- function(file) {
 	l1 <- length(which(res == values1))
 	
 	if(l1 >= 9) {
-		out <- "Great!"
+		out <- "Looks good"
 	}else if(l1 <= 8 & l1 >= 6) {
-		out <- "Some errors, but good!"
+		out <- "Some errors: may want to check your code"
 	}else if(l1 <= 5) {
 		out <- "Multiple errors: may want to check your code"
 	}
@@ -83,7 +83,7 @@ hw2_2_diab <- function(file) {
 		
 		grade_partial <- p1 + p2 + p3 + p4
 		if(grade_partial == 4) {
-			out <- "Great!"
+			out <- "Your final table is properly formatted"
 		} else if (p3 != 1 | p4 != 1) {
 			out <- "ERROR: column names or variable names incorrect"
 		} else {
