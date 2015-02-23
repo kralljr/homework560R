@@ -76,10 +76,21 @@ hw2_2_diab <- function(file) {
 		p2 <- 1 * (sum(dim(tab_diab)) == 15)
 	
 		cn <- c('Variable', 'Mean', 'N_diabetic', 'Mean_diabetic', 'N_not_diabetic', 'Mean_not_diabetic', 'Meandiff', 'Meandiff_LB', 'Meandiff_UB', 'Meandiff_Pval')
-		p3 <- sum(1 * (seq(1, 10) == match(cn, colnames(tab_diab))))/10	
-		
+		m1 <- match(cn, colnames(tab_diab))
+		if(length(which(is.na(m1))) > 0) {
+			p3 <- 0
+		} else {
+			p3 <- sum(1 * (seq(1, 10) == m1))/10	
+		}
+
 		vars <- c('chol', 'hdl', 'age', 'height', 'weight')
-		p4 <- sum(1 * (seq(1, 5) == match(vars, tab_diab[, 1])))/5
+		m1 <- match(vars, tab_diab[, 1])
+		if(length(which(is.na(m1))) > 0) {
+			p4 <- 0
+		} else {
+			p4 <- sum(1 * (seq(1, 5) == m1))/5
+		}
+		
 		
 		grade_partial <- p1 + p2 + p3 + p4
 		if(grade_partial == 4) {
